@@ -1,0 +1,446 @@
+{% extends 'base.html' %} {% block title %} Sernik || Home{% endblock title %} {% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+<style>
+    .news-card .card-body {
+        color: white !important;
+        width: 80%;
+    }
+
+    .author-info {
+        display: flex;
+        align-items: center;
+        align-content: center;
+    }
+
+    .news-card {
+        background-color: #d40000 !important;
+        color: white !important;
+        font-weight: bold;
+    }
+
+    .news-card:hover {
+        background-color: #000000 !important;
+        background-image: none !important;
+        transition: 0.5s;
+    }
+
+    .author-info {
+        display: flex;
+        justify-content: center;
+    }
+
+    .media-body {
+        font-size: 14px !important;
+    }
+
+    .index-service-icon {
+        color: #020202;
+        font-size: 50px;
+    }
+
+    @media (max-width:552px) {
+        .none-552 {
+            display: none;
+        }
+    }
+
+    .carousel-indicators li {
+        background-color: #d40000!important;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        color: #d40000!important;
+    }
+
+    .carousel-caption h3 {
+        color: #d40000;
+    }
+
+    .carousel-caption p {
+        color: #000000;
+    }
+
+    .oleez-landing-carousel .carousel-item .carousel-caption h2 span {
+        background-color: #d40000 !important;
+        display: inline-block!important;
+        padding: 10px 30px!important;
+        color: white!important;
+    }
+
+    #testimonial-slider {
+        padding: 50px 20px 35px 20px;
+        background: #fff;
+        text-align: center;
+        box-shadow: 0 0 3px 0px rgb(236 236 236);
+    }
+
+    .testimonial .description {
+        font-size: 15px!important;
+        color: #777;
+        line-height: 26px;
+        text-indent: 30px;
+        font-weight: 500;
+        position: relative;
+    }
+
+    .testimonial .description:before {
+        content: "";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        position: absolute;
+        top: 0;
+        /* left: -15px; */
+    }
+
+    .testimonial .title {
+        font-size: 24px;
+        font-weight: bold;
+        color: #363636;
+        text-transform: capitalize;
+        margin: 0;
+    }
+
+    .testimonial .post {
+        display: block;
+        font-size: 15px;
+        color: #363636;
+    }
+
+    .owl-buttons {
+        width: 100%;
+        height: 40px;
+        position: absolute;
+        bottom: 40%;
+        left: 0;
+    }
+
+    .owl-prev,
+    .owl-next {
+        position: absolute;
+        left: 0;
+        transition: all 0.4s ease-in-out 0s;
+    }
+
+    .owl-next {
+        left: auto;
+        right: 0;
+    }
+
+    .owl-buttons .owl-prev:before,
+    .owl-buttons .owl-next:before {
+        content: "\f104";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        font-size: 60px;
+        font-weight: 900;
+        color: #cacaca;
+        line-height: 20px;
+        opacity: 0.8;
+    }
+
+    .owl-buttons .owl-next:before {
+        content: "\f105";
+    }
+
+    .owl-buttons .owl-prev:hover:before,
+    .owl-buttons .owl-next:hover:before {
+        opacity: 1;
+    }
+
+    .owl-theme .owl-controls .owl-buttons div {
+        background: transparent;
+    }
+
+    .owl-theme .owl-controls {
+        margin-top: 40px;
+    }
+
+    .owl-theme .owl-controls .owl-page span {
+        width: 50px;
+        height: 50px;
+        border: 4px solid #ccc;
+        background: url("../media/") no-repeat;
+        background-size: cover;
+        transition: all 0.3s ease-in-out 0s;
+    }
+
+    .owl-theme .owl-controls .owl-page:nth-child(2) span {
+        background: url("../images/img-2.jpg") no-repeat;
+        background-size: cover;
+    }
+
+    .owl-theme .owl-controls .owl-page:nth-child(3) span {
+        background: url("../images/img-3.jpg") no-repeat;
+        background-size: cover;
+    }
+
+    .owl-theme .owl-controls.clickable .owl-page:hover span {
+        opacity: 0.5;
+    }
+
+    .owl-theme .owl-controls .owl-page.active span,
+    .owl-theme .owl-controls .owl-page.active:hover span {
+        border-color: #d40000 !important;
+        opacity: 1;
+    }
+
+    @media only screen and (max-width: 479px) {
+        .owl-buttons {
+            bottom: 30%;
+        }
+    }
+</style>
+
+<body>
+
+    <main>
+        <section>
+            <div class="container wow fadeIn">
+
+                <div id="oleezLandingCarousel" class="oleez-landing-carousel carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <img src="https://www.wework.com/ideas/wp-content/uploads/sites/4/2017/06/Web_150DPI-20190927_10th_Floor_Conference_Room_2_v1.jpg" alt="First slide" class="w-100">
+                            <div class="carousel-caption">
+                                <h2 data-animation="animated fadeInRight"><span>Welcome</span></h2>
+                                <h2 data-animation="animated fadeInRight"><span>To Sernik</span></h2>
+                                <a href="{% url 'blogs' %}" class="carousel-item-link" data-animation="animated fadeInRight">EXPLORE
+                                    BLOGS</a>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://www.wework.com/ideas/wp-content/uploads/sites/4/2017/06/Web_150DPI-20190927_10th_Floor_Conference_Room_2_v1.jpg" alt="Second slide" class="w-100">
+                            <div class="carousel-caption">
+                                <h2 data-animation="animated fadeInRight"><span>We Deliver Great</span></h2>
+                                <h2 data-animation="animated fadeInRight"><span>Experience</span></h2>
+                                <a href="{% url 'blogs' %}" class="carousel-item-link" data-animation="animated fadeInRight">EXPLORE
+                                    BLOGS</a>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://www.wework.com/ideas/wp-content/uploads/sites/4/2017/06/Web_150DPI-20190927_10th_Floor_Conference_Room_2_v1.jpg" alt="Second slide" class="w-100">
+                            <div class="carousel-caption">
+                                <h2 data-animation="animated fadeInRight"><span>We Deliver Great</span></h2>
+                                <h2 data-animation="animated fadeInRight"><span>Experience</span></h2>
+                                <a href="{% url 'blogs' %}" class="carousel-item-link" data-animation="animated fadeInRight">EXPLORE
+                                    BLOGS</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="oleez-landing-section oleez-landing-section-about">
+            <div class="container">
+                <div class="oleez-landing-section-content">
+                    <h3 class="indent">About us</h3>
+                    <div class="row landing-about-content wow fadeInUp">
+                        <div class="col-md-6">
+                            <h2>Business Growth. Predictable. Repeatable. Sustainable.</h2>
+                        </div>
+                        <div class="col-md-6">
+                            <p>Today’s business environment is fast and competitive. It’s easy to get overwhelmed and lose focus. That’s where we come in — helping you regain perspective and work smarter, not harder.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 landing-about-feature wow fadeInUp">
+                            <!-- <img src="/assets/images/icon_1.svg" alt="document" class="about-feature-icon"> -->
+                            <span class="index-service-icon"> <i class="bi bi-diamond "></i></span>
+
+                            <h5 class="about-feature-title">Clarity</h5>
+                            <p class="about-feature-description">Absolute certainty of your business vision and direction ensures fewer challenges, lower stress, and a happier you.</p>
+                        </div>
+                        <div class="col-md-4 landing-about-feature wow fadeInUp">
+                            <span class="index-service-icon"> <i class="bi bi-eye "></i></span>
+                            <h5 class="about-feature-title">Focus
+                            </h5>
+                            <p class="about-feature-description">Understand the actions needed to achieve your vision results with less overwhelm and better execution.
+                            </p>
+                        </div>
+                        <div class="col-md-4 landing-about-feature wow fadeInUp">
+                            <span class="index-service-icon"> <i class="bi bi-puzzle "></i></span>
+                            <h5 class="about-feature-title">Strategy</h5>
+                            <p class="about-feature-description">Alignment between your vision, mission, and competitive advantage cinches your ability to achieve your goals.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="oleez-landing-section oleez-landing-section-news" style="background-color: #f7f7f799;">
+            <div class="container">
+                <div class="">
+                    <h2 class="section-title wow fadeInUp">Recent News & Stories.</h2>
+                    <p class="news-section-subtitle wow fadeInUp">Share your stories and news with everyone.</p>
+                    <div class="row">
+                        {% for post in posts %}
+                        <div class="col-lg-4 mb-4 mb-lg-0">
+                            <a class="" href="{% url 'blog' post.post_id %}" style="color: white!important; text-decoration: none;">
+                                <div class="news-card news-card-1 wow fadeInUp">
+                                    <div class="card-body">
+                                        <div class="author-info media">
+
+                                            <div class="media-body">
+                                                <h6 class="author-name">Posted by {{post.writer_name}}</h6>
+                                                <p class="news-post-date">{{post.post_date}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="post-meta">
+                                            {% for tag in post.tags.all %}
+                                            <span class="post-category" style="color: white; font-weight:100;">#{{tag}}
+                                            </span> {% endfor %}
+                                        </div>
+                                        <h5 class="post-title">{{post.title}}</h5>
+                                        <a href="{% url 'blog' post.post_id %}" class="post-permalink">Read more </a>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        {% endfor %}
+                        <!-- For Backend develop remove from here -->
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="oleez-landing-section oleez-landing-section-testimonials">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 ">
+                        <h2 class="section-title wow fadeInUp">Our Endorsements</h2>
+                        <p class="news-section-subtitle wow fadeInUp">Clients Testimonial & Our Reviews</p>
+                        <div id="testimonial-slider" class="owl-carousel">
+                            <div class="testimonial">
+                                <p class="description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus molestie, justo nec convallis sollicitudin, sapien lorem dictum lacus, non consequat odio ipsum nec est. Sed mattis egestas elementum. Nulla facilisi. Quisque placerat risus ac nunc ornare
+                                    tincidunt. Sed quis faucibus nunc. Pellentesque accumsan arcu mi, eget venenatis mauris.
+                                </p>
+                                <h3 class="title">williamson</h3>
+                                <span class="post">Web Developer</span>
+                            </div>
+
+                            <div class="testimonial">
+                                <p class="description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus molestie, justo nec convallis sollicitudin, sapien lorem dictum lacus, non consequat odio ipsum nec est. Sed mattis egestas elementum. Nulla facilisi. Quisque placerat risus ac nunc ornare
+                                    tincidunt. Sed quis faucibus nunc. Pellentesque accumsan arcu mi, eget venenatis mauris.
+                                </p>
+                                <h3 class="title">Kristina</h3>
+                                <span class="post">Web Designer</span>
+                            </div>
+
+                            <div class="testimonial">
+                                <p class="description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus molestie, justo nec convallis sollicitudin, sapien lorem dictum lacus, non consequat odio ipsum nec est. Sed mattis egestas elementum. Nulla facilisi. Quisque placerat risus ac nunc ornare
+                                    tincidunt. Sed quis faucibus nunc. Pellentesque accumsan arcu mi, eget venenatis mauris.
+                                </p>
+                                <h3 class="title">Miranda Joy</h3>
+                                <span class="post">Web Developer</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+
+
+
+
+    </main>
+    <footer class="page-footer font-small special-color-dark pt-4">
+
+        <div class="container">
+
+            <div class="row footer-content-2">
+                <div class="col-md-8 align-items-center">
+
+                    <div class="footer-widget-text">
+
+                        <ul class="footer-navigatoin">
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'home' %}">Home</a>
+                            </li>
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'about'%}">About</a></li>
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'blogs' %}">Blogs</a></li>
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'f&q'%}">FAQ</a>
+                            </li>
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'contact'%}">Contact</a>
+                            </li>
+                            {% if user.is_authenticated %}
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'logout'%}">Logout</a>
+                            </li>
+                            {% else %}
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'register'%}">Register</a>
+                            </li>
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'login'%}">Login</a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                        <!--<ul class="footer-navigatoin">-->
+                        <!--    {% if user.is_authenticated %}-->
+                        <!--    <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'logout'%}">Logout</a>-->
+                        <!--    </li>-->
+                        <!--    {% else %}-->
+                        <!--    <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'register'%}">Register</a>-->
+                        <!--    </li>-->
+                        <!--    <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'login'%}">Login</a>-->
+                        <!--    </li>-->
+                        <!--    {% endif %}-->
+                        <!--</ul>-->
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 search-footer-center">
+                    <form class="form-inline flex-search" style":display:;"  action="{% url 'search' %}">
+                        <input class="form-control form-control-sm mr-3 w-75 footer-search" type="text" id="search" name="search" placeholder="Search" aria-label="Search">
+                        <button class="btn footer-icon" type="submit"> <i class="bi bi-search footer-icon " aria-hidden="true "></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-text ">
+                <p class="mb-md-0 ">© Copyright And Privacy Policy Reserved by <a class="footer-link-sernik-2" href="">Sundayink</a> <span id="monthYear" class="">March 2022</span>, Website Designed by <a href="https://www.himanicc.com " target="_blank "
+                        rel="noopener noreferrer " class="footer-link-sernik " style="color: white; font-weight:600; ">www.himanicc.com</a>
+                </p>
+            </div>
+        </div>
+
+
+
+
+    </footer>
+
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#testimonial-slider").owlCarousel({
+            items: 1,
+            itemsDesktop: [1000, 1],
+            itemsDesktopSmall: [979, 1],
+            itemsTablet: [768, 1],
+            pagination: true,
+            navigation: true,
+            navigationText: ["", ""],
+            slideSpeed: 1000,
+            autoPlay: true
+        });
+    });
+</script>
+
+{% endblock content %}

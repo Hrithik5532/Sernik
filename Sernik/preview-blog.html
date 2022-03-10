@@ -1,0 +1,239 @@
+{% extends 'base.html' %} {% block title%} Admin|| Blog-Manager{% endblock title%} {% block content%}
+
+<body>
+
+
+    <!-- Style Attribe to the same page : Table Section -->
+    <style>
+    .td{
+        display: flex;
+    flex-direction: column;
+    }    
+    .admin-icon{
+        display:flex;
+    }
+    .page-footer{
+        position:unset !important;
+    }
+    .preview-icons {
+        font-size: 14px !important;
+        padding: 0 10px;
+        color: black;
+    }
+
+    .preview-icons:hover {
+        font-size: 14px !important;
+        padding: 0 10px;
+        color: red;
+    }
+
+    .same-margin-container {
+        margin: 0 auto 40px;
+    }
+    .rotate-screen{
+        display:none;
+    }
+
+    @media (max-width:772px) {
+        table {
+            width: 100%;
+        }
+    }
+    .add-btn{
+        font-size:smaller !important;
+        align-text:end;
+        color: black;
+        border-radius:10px!important;
+    }
+    .blog-manager{
+        display:flex;
+        align-items:center;
+        flex-direction:row;
+
+    }
+    .blog-right{
+        text-align:right;
+
+    }
+    .blog-manage-title{
+        width:50%;
+    }
+    .blog-right {
+        width:50% !important;
+    }
+    
+    @media(max-width:552px){
+        .add-btn{
+            font-size:12px !important;
+        }
+        .add-btn i{
+            font-size: 11px !important;
+        }
+        .page-footer{
+            position:absolute;
+
+        }
+    }
+    @media(max-width:419px){
+        main{
+            display:none !important;
+        }
+        .page-footer{
+            bottom:0;
+            position:absolute !important;
+
+        }
+        .rotate-screen{
+            display:block;
+                width: max-content;
+                margin: auto;
+                padding: 54px;
+        
+        }
+
+    }
+
+</style>
+<span class="rotate-screen col-md-10"><i class="bi bi-arrow-clockwise" style="font-size:16px;"></i>Rotate screen to portrait</span>
+<main class="height-main">
+<div class="container same-margin-container">
+    <div class="row blog-manager">
+      <div class="col-md-6 blog-manage-title">
+         <h1 class="oleez-page-title wow fadeInUp">Blog Manager </h1>
+      </div>
+      <div class="col-md-6 blog-right">
+        <a href="{% url 'add_post' %}" class="add-btn fadeInUp btn default-button"><i class="bi bi-plus" style="font-size:16px;"></i>Add Blog</a>
+      </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">Blog Title</th>
+                        <th scope="col">Post Date</th>
+                        <th scope="col">Check</th>
+
+                    </tr>
+                </thead>
+                {% for post in  posts%}
+                <tbody>
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td class="td"><span class="post-title">{{post.title}}</span>
+                            <span class="admin-icon">
+                                <a class="preview-icons" href="{% url 'edit_post' post.post_id%}"><i class=" bi bi-pencil-fill"></i></a>|
+                                <a class="preview-icons" href="{% url 'delete_post' post.post_id%}"><i class=" bi bi-trash-fill"></i></a>|
+                                <a class="preview-icons" href="{% url 'blog' pk=post.post_id preview='true' %}"><i class=" bi bi-eye-fill"></i></a>
+                            </span>
+                        </td>
+                        <td>
+                            {{post.post_date}}
+                        </td>
+                        <td style="display:flex;">
+                            {% if post.post_now %}
+                            <form action="{% url 'checkbtn' post.post_id%}" method="POST">
+                                {% csrf_token %}
+                                <div class="custom-control custom-checkbox py-2 px-4">
+                                    <label >Already Posted</label>
+                                    <button class="btn btn-dark" type="submit" name="check_btn" value='Change'>Change</button>
+
+                                </div>
+                            </form>
+
+                            {% else %}
+                            <form action="{% url 'checkbtn' post.post_id%}" method="POST">
+                                {% csrf_token %}
+
+                                <div class="custom-control custom-checkbox py-2 px-4">
+                                    <label >Ready to Post !!</label>
+
+                                    <button class="btn btn-danger" type="submit" name="check_btn" value="post">Post</button>
+
+                                </div>
+                            </form>
+                            {% endif %}
+                        </td>
+
+
+                    </tr>
+
+                </tbody>
+                {% endfor %}
+
+            </table>
+        </div>
+    </div>
+</div>
+</main>
+  <footer class="page-footer font-small special-color-dark pt-4" style="    bottom: 0;">
+
+        <div class="container">
+
+            <div class="row footer-content-2">
+                <div class="col-md-8 align-items-center">
+
+                    <div class="footer-widget-text">
+
+                        <ul class="footer-navigatoin">
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'home' %}">Home</a>
+                            </li>
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'about'%}">About</a></li>
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'blogs' %}">Blogs</a></li>
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'f&q'%}">FAQ</a>
+                            </li>
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'contact'%}">Contact</a>
+                            </li>
+                            {% if user.is_authenticated %}
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'logout'%}">Logout</a>
+                            </li>
+                            {% else %}
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'register'%}">Register</a>
+                            </li>
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'login'%}">Login</a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                        <!--<ul class="footer-navigatoin">-->
+                        <!--    {% if user.is_authenticated %}-->
+                        <!--    <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'logout'%}">Logout</a>-->
+                        <!--    </li>-->
+                        <!--    {% else %}-->
+                        <!--    <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'register'%}">Register</a>-->
+                        <!--    </li>-->
+                        <!--    <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'login'%}">Login</a>-->
+                        <!--    </li>-->
+                        <!--    {% endif %}-->
+                        <!--</ul>-->
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 search-footer-center">
+                    <form class="form-inline flex-search" style":display:;"  action="{% url 'search' %}">
+                        <input class="form-control form-control-sm mr-3 w-75 footer-search" type="text" id="search" name="search" placeholder="Search" aria-label="Search">
+                        <button class="btn footer-icon" type="submit"> <i class="bi bi-search footer-icon " aria-hidden="true "></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-text ">
+                <p class="mb-md-0 ">© Copyright And Privacy Policy Reserved by <a class="footer-link-sernik-2" href="">Sundayink</a> <span id="monthYear" class="">March 2022</span>, Website Designed by <a href="https://www.himanicc.com " target="_blank "
+                        rel="noopener noreferrer " class="footer-link-sernik " style="color: white; font-weight:600; ">www.himanicc.com</a>
+                </p>
+            </div>
+        </div>
+
+
+
+
+    </footer>
+
+
+
+
+
+</body>
+{% endblock content%}

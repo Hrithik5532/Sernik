@@ -1,0 +1,90 @@
+{% extends 'base.html' %} {% block title%}Admin || Data{% endblock title%} {% block content%}
+
+
+
+<!-- Style Attribe to the same page : Table Section -->
+<style>
+    .data-icon {
+        font-size: 20px !important;
+        padding: 0 10px;
+        color: black;
+    }
+    
+    .data-icon:hover {
+        font-size: 20px !important;
+        padding: 0 10px;
+        color: red;
+    }
+    
+    .check-data {
+        text-align: center;
+    }
+    
+    .same-margin-container {
+        margin: 0 auto 40px;
+    }
+    
+    @media (max-width:772px) {
+        table {
+            width: 100%;
+        }
+    }
+</style>
+<body>
+    
+    <div class="container same-margin-container">
+        <h1 class="oleez-page-title wow fadeInUp">Submitted Data</h1>
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">No.</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Mail ID</th>
+                            <th scope="col">Number</th>
+                            <th scope="col">Services</th>
+                            <th scope="col">Subscribe</th>
+                            <th scope="col">Contact</th>
+                            <th scope="col">Register</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Ashwin Sevak
+
+                            </td>
+                            <td>
+                                ahswinsevak2091@gmail.com
+                            </td>
+                            <td>
+                                8239879128
+                            </td>
+                            <td>
+                                Website
+                            </td>
+                            <td class="check-data">
+                                <i class="data-icon bi bi-check"></i>
+                            </td>
+                        <td class="check-data">
+                            <i class="data-icon bi bi-x"></i>
+                        </td>
+                        <td class="check-data">
+                            <i class="data-icon bi bi-x"></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+</body>
+
+{% endblock content%}

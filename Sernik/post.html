@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title%}
+Add Post
+{% endblock title%}
+
+{% block content%}
+<body>
+    
+    <style>
+        li a{
+            display:flex; 
+            font-size:16px;
+            color: black;
+            
+        }
+        li a:hover{
+            color:red;
+        }
+    </style>
+    <!-- .site-wrap -->
+    <div class="site-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 single-content">
+                    {% if user.is_authenticated %} 
+                    {% if user.is_staff %}
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token%}
+                        
+                        <a  style="font-size: large;">Writer Name:</a>{{form.writer_name}} <br>
+                        
+                        <a style="font-size: large;">Add Category:</a>
+                        <li style="    list-style: none;
+                        display: flex;">
+                        
+                        {{form.category}}<a href="{% url 'add_category'%}" ><i class="bi bi-plus" style="font-size:20px;"></i>Add New Category</a><hr>
+                    </li>
+                    <a  style="font-size: large;">Title</a>:{{form.title}}
+                    <a  style="font-size: large;">Content</a>:{{form.content}}
+                    <a  style="font-size: large;">Post Date</a>{{form.post_date}} <hr> 
+                    <a  style="font-size: large;">Tags</a>{{form.tags}} <hr>      
+                    <a  style="font-size: large;">Thumbnail</a>{{form.thumbnail}}
+                    {{form.media}}
+{% comment %} 
+{{form.datepicker}}
+{{ form.as_p}} {% endcomment %}
+<button class="btn-secondary btn" style="display: flex;padding: 9px;margin: 22px auto;">  Save</button>
+</form>
+{% else %}
+<h3 style="text-align: center;"> User Access Denied </h3>   
+
+{%endif%}    
+{% else %}
+<h3 style="text-align: center;"> User Access Denied </h3>   
+{% endif %}     
+</div>
+</div> 
+</div>           
+</body>
+{% endblock content%}

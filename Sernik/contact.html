@@ -1,0 +1,223 @@
+{% extends 'base.html' %} {% block title %}Sernik || Contact {% endblock title %} {% block content %}
+
+
+<style>
+    .contact-row {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        flex: nowrap !important;
+        flex-wrap: nowrap !important;
+        align-content: center !important;
+    }
+    
+    .contact-cards {
+        margin: 15px;
+    }
+    
+    .contact-block {
+        border: 1px solid rgba(216, 216, 216, 0.623);
+        color: rgb(0, 0, 0);
+        padding: 10px;
+        margin: 10px;
+        display: flex;
+    }
+    
+    .contact-icon {
+        font-size: 50px;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        align-content: center;
+        width: 100%;
+        color: #df0413;
+    }
+    
+    .contact-card-link {
+        color: rgb(0, 0, 0) !important;
+    }
+    
+    .icons {
+        margin: auto;
+    }
+    
+    .contact-card-link:hover {
+        color: rgb(172, 0, 0) !important;
+        text-decoration: none;
+    }
+    
+    @media (max-width:772px) {
+        .contact-row {
+            display: flex !important;
+            flex-direction: column;
+        }
+        .contact-block {
+            display: flex;
+            justify-content: center;
+        }
+        .navigation-link {
+            font-size: 13px!important;
+        }
+    }
+    
+    .form-group input {
+        border-bottom: 1px solid #9b9b9b7a !important;
+        border-radius: 0 !important;
+        padding: 10px 10px !important;
+        font-weight: 100!important;
+        background-color: #b8b8b81c;
+    }
+    
+    .form-group {
+        position: relative;
+        margin-bottom: 30px;
+    }
+    
+    textarea {
+        border-radius: 0 !important;
+        padding: 10px 10px !important;
+        background-color: #b8b8b81c;
+        border: 0px!important;
+        border-bottom: 1px solid #9b9b9b7a !important;
+    }
+</style>
+
+
+<body>
+    <main class="contact-page">
+        <div class="container">
+            <h1 class="oleez-page-title wow fadeInUp">Contact Us</h1>
+            <div class="contact-cards">
+
+                <div class="row contact-row" style="text-align:center;">
+                    <div class="col-md-4 contact-block">
+                        <div class="row">
+                            <div class="col-md-2 contact-icon">
+                                <i class="icons bi bi-geo-alt-fill"></i>
+                            </div>
+                            <div class="col-md-10">
+                                <span class="" style=" font-weight:bold;"> Address :</span> <br>
+                                <a class="contact-card-link" href="#">Mumbai, Maharashtra, India</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Contact : Phone  -->
+                    <div class="col-md-4 contact-block">
+                        <div class="row" style="text-align:center;">
+                            <div class="col-md-2 contact-icon">
+                                <i class=" icons bi bi-telephone-fill"></i>
+                            </div>
+                            <div class="col-md-10">
+                                <span class="" style=" font-weight:bold;"> Number :</span> <br>
+                                <a class="contact-card-link" href="#"> +91 000-000-0000</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Contact Card : Email -->
+                    <div class="col-md-4 contact-block">
+                        <div class="row" style="text-align:center;">
+                            <div class="col-md-2 contact-icon">
+                                <i class=" icons bi bi-envelope-fill"></i>
+                            </div>
+                            <div class="col-md-10">
+                                <span class="" style=" font-weight:bold;"> Email :</span> <br>
+                                <a class="contact-card-link" href="#">shrenik@sundayink.in</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-5 mb-md-0 pr-lg-5 wow fadeInLeft">
+                    <div class="embed-responsive embed-responsive-1by1">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10759.495900110083!2d-122.34410726082857!3d47.609140133437705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906ab679235d7d%3A0xae763a82ab1fed6c!2sCentral%20Business%20District%2C%20Seattle%2C%20WA%2C%20USA!5e0!3m2!1sen!2sin!4v1587035152547!5m2!1sen!2sin"
+                            width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    </div>
+                </div>
+                <div class="col-md-6 pl-lg-5 wow fadeInRight">
+                    <form action="POST" class="oleez-contact-form">
+                        <div class="form-group">
+                            <input type="text" class="oleez-input" id="fullName" name="fullName" required placeholder="Enter Your Name">
+
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="oleez-input" id="fullName" name="fullName" placeholder="Enter Your Mobile Number">
+
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="oleez-input" id="fullName" name="email" required placeholder="Enter Your Email">
+
+                        </div>
+                        <div class="form-group">
+
+                            <textarea name="message" id="message" rows="10" class="oleez-textarea" required placeholder="Write Your Message Here"></textarea>
+                        </div>
+                        <button type="submit" class="btn defaul-btn">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+
+    <!-- footear  -->
+
+
+    <footer class="page-footer font-small special-color-dark pt-4">
+
+        <div class="container">
+
+            <div class="row footer-content-2">
+                <div class="col-md-8 align-items-center">
+
+                    <div class="footer-widget-text">
+
+                        <ul class="footer-navigatoin">
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'home' %}">Home</a>
+                            </li>
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'about'%}">About</a></li>
+                            <li class="Foooter-list"> <a class="widget-content navigation-link" href="{% url 'blogs' %}">Blogs</a></li>
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'f&q'%}">FAQ</a>
+                            </li>
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'contact'%}">Contact</a>
+                            </li>
+                        </ul>
+                        <ul class="footer-navigatoin">
+                            {% if user.is_authenticated %}
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'logout'%}">Logout</a>
+                            </li>
+                            {% else %}
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'register'%}">Register</a>
+                            </li>
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'login'%}">Login</a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 search-footer-center">
+                    <form class="form-inline" action="{% url 'search' %}">
+                        <input class="form-control form-control-sm mr-3 w-75 footer-search" type="text" id="search" name="search" placeholder="Search" aria-label="Search">
+                        <button class="btn footer-icon" type="submit"> <i class="bi bi-search footer-icon " aria-hidden="true "></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-text ">
+                <p class="mb-md-0 ">© Copyright And Privacy Policy Reserved by <a class="footer-link-sernik-2" style="color:white!important;" href="">Sundayink</a> <span id="monthYear" class="">March 2022</span>, Website Designed by <a href="https://www.himanicc.com " target="_blank "
+                        rel="noopener noreferrer " class="footer-link-sernik " style="color: white; font-weight:600; ">www.himanicc.com</a>
+                </p>
+            </div>
+        </div>
+
+
+
+
+    </footer>
+</body>
+
+{% endblock content %}

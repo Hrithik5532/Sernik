@@ -1,0 +1,168 @@
+{% extends 'base.html' %} {% block title %} Sernik || About Us{% endblock title %} {% block content %}
+<style>
+    @media(max-width:552px){
+    .navigation-link{
+        font-size:12px!important;
+    }
+}
+
+</style>
+<body>
+    <main class="about-page">
+        <div class="container">
+            <h1 class="oleez-page-title wow fadeInUp">About Us</h1>
+            <!-- <p class="oleez-page-header-content wow fadeInUp">A design and development agency based in London. We create digital products that make people’s lives easier.</p> -->
+            <div class="mb-5 mb-md-0 feature-card wow fadeInUp">
+
+                <p class="feature-card-content">At S N & Co. client enjoys unique combination of expertise in area of business expansion, finance management, process automation. In fact with our innovative and research base approach our clients get fresh perspective of their business
+                    and it does not stop here as real fun is in implementing those fresh perspective in structured format and monitor it. It helps client to focus on his core strength and eventually increase business and bottom line. So when you are looking
+                    to get fresh perspective for your business honour us to empower you.
+                </p>
+            </div>
+            <img src="/media/images/2.jfif" alt="about" class="w-100 wow fadeInUp">
+            <section class="oleez-about-features">
+                <div class="row">
+                    <div class="col-md-6 mb-5 mb-md-0 feature-card wow fadeInUp">
+                        <h5 class="feature-card-title">Our vision</h4>
+                            <p class="feature-card-content">Achieve strong recognition, both in domestic and international markets, as a firm providing value-added solutions in committed time. </p>
+                    </div>
+                    <div class="col-md-6 mb-5 mb-md-0 feature-card wow fadeInUp">
+                        <h5 class="feature-card-title">Our Mission</h4>
+                            <p class="feature-card-content">
+                                To render expertise services to clients Utmost client satisfaction Carrying professionalism in a systemized manner
+                            </p>
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <h4 class="">Mezzanine Funding Solution</h4>
+                    <p>
+                        Our Singapore desk aims to respond to the various needs of Singapore companies, both those who are already developing business in India, and those who are planning to invest in India.
+
+                    </p>
+                    <p>
+                        Our Singapore desk, headed by Mr. Ct. Chair, has accumulated more than 19 years of experience in auditing and commercial accounting. He has extensive audit experience with various industries offers a support system for our Singapore clients looking to
+                        successfully do business in India. In addition to an affiliate firm in Singapore, we also have a dedicated team of in-house professionals with decades of experience in cross-border transactions, India set ups, tax law and regulatory
+                        compliances. </p>
+                </div>
+            </section>
+            <!-- <section class="oleez-what-we-do">
+                <div class="row">
+                    <div class="col-lg-10 offset-lg-1">
+                        <h2 class="section-title wow fadeInUp">What we do</h2>
+                        <h4 class="section-subtitle wow fadeInUp">We design thoughtful digital experiences & beautiful brand aesthetics.</h4>
+                        <div class="row">
+                            <div class="col-md-4 mb-5 mb-md-0 wow fadeInUp">
+                                <h5 class="what-we-do-list-title">Market Research</h5>
+                                <ul class="what-we-do-list">
+                                    <li>Websites</li>
+                                    <li>Mobile Applications</li>
+                                    <li>Prototyping</li>
+                                    <li>Server Administration</li>
+                                    <li>Network Solutions</li>
+                                    <li>Databases</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4 mb-5 mb-md-0 wow fadeInUp">
+                                <h5 class="what-we-do-list-title">Design & Creative</h5>
+                                <ul class="what-we-do-list">
+                                    <li>Web Design</li>
+                                    <li>Motion Production</li>
+                                    <li>User Experience</li>
+                                    <li>Illustration</li>
+                                    <li>Content Management</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4 mb-5 mb-md-0 wow fadeInUp">
+                                <h5 class="what-we-do-list-title">WordPress</h5>
+                                <ul class="what-we-do-list">
+                                    <li>Websites</li>
+                                    <li>Mobile Applications</li>
+                                    <li>Prototyping</li>
+                                    <li>Server Administration</li>
+                                    <li>Network Solutions</li>
+                                    <li>Databases</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+            <section class="oleez-about-work-with-us wow fadeInUp">
+                <div class="row">
+                    <div class="col-lg-9 offset-lg-1">
+                        <h2 class="section-title">We design thoughtful digital experiences & beautiful brand aesthetics.
+                        </h2>
+                        <p class="section-subtitle">Would you like us to <a href="#!">work</a> on your brand identity? We would be happy to <a href="#!">help</a>.</p>
+                        <a href="#!" class="btn work-with-us-btn default-button">Work with us</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+     <footer class="page-footer font-small special-color-dark pt-4">
+
+        <div class="container">
+
+            <div class="row footer-content-2">
+                <div class="col-md-8 align-items-center">
+
+                    <div class="footer-widget-text">
+
+                        <ul class="footer-navigatoin">
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'home' %}">Home</a>
+                            </li>
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'about'%}">About</a></li>
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'blogs' %}">Blogs</a></li>
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'f&q'%}">FAQ</a>
+                            </li>
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'contact'%}">Contact</a>
+                            </li>
+                            {% if user.is_authenticated %}
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'logout'%}">Logout</a>
+                            </li>
+                            {% else %}
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'register'%}">Register</a>
+                            </li>
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'login'%}">Login</a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                        <!--<ul class="footer-navigatoin">-->
+                        <!--    {% if user.is_authenticated %}-->
+                        <!--    <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'logout'%}">Logout</a>-->
+                        <!--    </li>-->
+                        <!--    {% else %}-->
+                        <!--    <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'register'%}">Register</a>-->
+                        <!--    </li>-->
+                        <!--    <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'login'%}">Login</a>-->
+                        <!--    </li>-->
+                        <!--    {% endif %}-->
+                        <!--</ul>-->
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 search-footer-center">
+                    <form class="form-inline flex-search" style":display:;"  action="{% url 'search' %}">
+                        <input class="form-control form-control-sm mr-3 w-75 footer-search" type="text" id="search" name="search" placeholder="Search" aria-label="Search">
+                        <button class="btn footer-icon" type="submit"> <i class="bi bi-search footer-icon " aria-hidden="true "></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-text ">
+                <p class="mb-md-0 ">© Copyright And Privacy Policy Reserved by <a class="footer-link-sernik-2" href="">Sundayink</a> <span id="monthYear" class="">March 2022</span>, Website Designed by <a href="https://www.himanicc.com " target="_blank "
+                        rel="noopener noreferrer " class="footer-link-sernik " style="color: white; font-weight:600; ">www.himanicc.com</a>
+                </p>
+            </div>
+        </div>
+
+
+
+
+    </footer>
+</body>
+
+{% endblock content %}

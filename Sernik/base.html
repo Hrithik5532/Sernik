@@ -1,0 +1,447 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        {% block title %}{% endblock title %}
+    </title>
+    <link rel="icon" href="/media/logo/logo.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="/assets/css/main-style.css">
+    <link rel="stylesheet" href="/assets/css/typo.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/vendors/animate.css/animate.min.css">
+    <link rel="stylesheet" href="/assets/vendors/slick-carousel/slick.css">
+    <link rel="stylesheet" href="/assets/vendors/slick-carousel/slick-theme.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/media/logo/logo.png">
+    <script src="/assets/vendors/jquery/jquery.min.js"></script>
+    <script src="/assets/js/loader.js"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XSPGR282HM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-XSPGR282HM');
+    </script>
+</head>
+<style>
+
+
+    body {
+        width: 100% !important;
+        min-height: 100vh;
+        position: relative;
+        margin: 0;
+    }
+
+    @media(max-width:772px) {
+        header {
+            z-index: 999;
+        }
+        .footer-navigatoin {
+            flex-direction: inherit;
+            justify-content: center;
+        }
+        .footer-list {
+            margin: 0 5px
+        }
+        body {
+            width: 100% !important;
+        }
+    }
+
+    @media(max-width:552) {
+        header {
+            z-index: 999;
+        }
+        .footer-navigatoin {
+            flex-direction: inherit;
+            justify-content: center;
+        }
+        .footer-list {
+            margin: 0 5px
+        }
+        body {
+            width: 100% !important;
+        }
+    }
+
+    .off-canvas-menu {
+        z-index: 999;
+    }
+
+    .search-modal {
+        z-index: 999;
+        width: 100%;
+        background: transparent;
+        height: 40%;
+        top: 30%;
+    }
+
+    .search-inside {
+        width: 60%;
+        background-color: black;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .search-btn {
+        color: rgb(255, 255, 255);
+        background-color: rgb(211, 25, 25);
+        border-radius: 0px;
+        font-weight: 900;
+        font-size: 15px;
+        padding: 20px;
+    }
+
+    .search-input {
+        background-color: aliceblue !important;
+        border-bottom: 2px solid rgb(194, 6, 6);
+    }
+    /*footer making changes */
+
+    .footer-navigatoin {
+        margin: 0;
+        display: flex;
+    }
+
+  
+
+    .Footer-list {
+        padding: 0 10px;
+        margin: 0;
+    }
+
+    .footer-link-sernik {
+        font: bold;
+    }
+
+    .footer-link-sernik:hover {
+        color: white !important;
+        text-decoration: none;
+        font: bold;
+    }
+
+    @media(max-width:772px) {
+        .search-inside {
+            width: 80%;
+            background-color: black;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .search-btn {
+            color: rgb(255, 255, 255);
+            background-color: rgb(211, 25, 25);
+            border-radius: 0px;
+            font-weight: 900;
+            font-size: 14px;
+            padding: 10px;
+        }
+        .search-input {
+            background-color: aliceblue !important;
+            border-bottom: 2px solid rgb(194, 6, 6);
+        }
+   
+        .footer-navigatoin {
+            flex-direction: inherit;
+            justify-content: center;
+        }
+        .footer-list {
+            margin: 0 5px
+        }
+        .row-change {
+            flex-direction: column-reverse;
+            text-align: center;
+            justify-content: center;
+        }
+      
+       
+        body {
+            width: 100% !important;
+        }
+    }
+
+    .close-search-btn {
+        top: 20px;
+        padding: 10px;
+        font-size: 20px;
+        color: black;
+        font-weight: bold;
+    }
+    /* Footer Changes */
+
+    .oleez-footer .footer-text {
+        justify-content: center;
+    }
+
+
+    .footer-content-2 {
+        padding: 6px;
+        display: flex;
+        align-items: center;
+    }
+
+
+
+    .footer-search {
+        background: #f0eeee2e;
+        border: none;
+        border-radius: 5px;
+        border-bottom: 1px solid #373737;
+        padding: 15px;
+    }
+
+    .footer-icon {
+        color: white!important;
+        background: #bd2815;
+        width: 40px;
+        padding: 3px;
+        margin: 0;
+    }
+
+    .whats-app {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 40px;
+        right: 15px;
+        background-color: #ffffff00;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        z-index: 100;
+    }
+
+    .my-float {
+        margin-top: 16px;
+    }
+
+    .footer-link-sernik-2 {
+        color: #bd2815!important;
+        font-weight: bold;
+    }
+
+    .footer-link-sernik-2:hover {
+        color: #ffffff!important;
+        text-decoration: none;
+    }
+
+    .search-footer-center {
+        display: flex;
+        justify-content: center!important;
+    }
+
+    @media(max-width:552px) {
+        .search-inside {
+            width: 100%;
+            background-color: black;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .row-change {
+            flex-direction: column-reverse;
+            text-align: center;
+        }
+        .footer-navigatoin {
+            flex-direction: inherit;
+            justify-content: center;
+        }
+        .whats-app {
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 20px;
+        }
+    }
+
+
+</style>
+{% comment %} 
+{% for message in messages %}
+<div class="alert alert-{{message.tags}}" style="text-align: center;">
+    {{message}}
+</div>
+{% endfor %} {% endcomment %}
+
+<!-- Header Navigation code Start from here -->
+<header class="oleez-header">
+    <!-- Navigartion Search Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light main-navigation">
+        
+        <!-- Logo Container -->
+        <div class="logo-container">
+            <a class="navbar-brand" href="{% url 'home' %}"><img class="img-fluid logo client-logo" src="/media/logo/logo.png" alt="Sernik"></a>
+            <p class="sub-logo-heading">Expremential Tour</p>
+        </div>
+
+        <!-- Right Side Menu -->
+        <div class="right-menu">
+            <ul class="nav nav-actions d-lg-none ml-auto">
+                <li class="nav-item">
+                    <a class="oleez-social-menu-link" href="#!" data-toggle="offCanvasMenu">
+                        <i class='bi bi-list menu-icon' style="color:black; font-size:30px"></i>
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav d-none d-lg-flex">
+                <li class="nav-item ml-5">
+                    <a class="nav-link pr-0 nav-link-btn" href="#!" data-toggle="offCanvasMenu">
+                        <i class='bi bi-list menu-icon' style="font-size:30px"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+</header>
+
+
+
+
+
+{% block content %} {% endblock content %}
+
+
+
+
+
+
+<!-- Code for the Social Icons that will come on the right side -->
+<div class="icon-bar">
+    <a href="#" class=""><i class="side-icon facebook bi bi-facebook"></i></a>
+    <a href="#" class=""><i class="side-icon linkedin bi bi-linkedin"></i></a>
+    <a href="#" class=""><i class="side-icon twitter bi bi-twitter"></i></a>
+    <a href="#" class=""><i class="side-icon youtube bi bi-youtube"></i></a>
+</div>
+
+
+
+<!-- Footer End -->
+
+
+<!-- The area is connected with the header part with search and the main menu -->
+<nav id="offCanvasMenu" class="off-canvas-menu">
+    <button type="button" class="close" aria-label="Close" data-dismiss="offCanvasMenu">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <ul class="oleez-social-menu">
+        <li>
+            <a href="{% url 'home' %}" class="oleez-social-menu-link">Home</a>
+        </li>
+        <li>
+            <a href="{% url 'about' %}" class="oleez-social-menu-link">About</a>
+        </li>
+        <li>
+            <a href="{% url 'blogs' %}" class="oleez-social-menu-link">Blog</a>
+        </li>
+        <li>
+            <a href="{% url 'f&q'%}" class="oleez-social-menu-link">F&Q</a>
+        </li>
+        {% if user.is_authenticated %} {% if user.is_staff %}
+        <li>
+            <a class="oleez-social-menu-link" href="{% url 'blog-settings'%}">Blog-Manager</a>
+        </li>
+        <li>
+            <a class="oleez-social-menu-link" href="{% url 'logout'%}">Logout</a>
+        </li>
+        <li>
+            <a class="oleez-social-menu-link" href="{% url 'admin:index'%}">Admin Panel</a>
+        </li>
+        {% else %}
+        <li>
+            <a class="oleez-social-menu-link" href="{% url 'contact'%}">Contact</a>
+        </li>
+        <li>
+            <a class="oleez-social-menu-link" href="{% url 'logout'%}">Logout</a>
+        </li>
+        {% endif %} {% else%}
+        <li>
+            <a class="oleez-social-menu-link" href="{% url 'register'%}">Register</a>
+        </li>
+        <li>
+            <a class="oleez-social-menu-link" href="{% url 'contact'%}">Contact </a>
+        </li>
+        <li>
+            <a class="oleez-social-menu-link" href="{% url 'login'%}">Login</a>
+        </li>
+        {% endif %}
+    </ul>
+</nav>
+
+<!-- Whatsapp Chat Integration -->
+<!--<a class="whats-app" href="https://wa.me/+919967001533" target="_blank">-->
+<!--    <img class="img-fluid whatsapp-img" src="/media/logo/what.png">-->
+<!--</a>-->
+<!--<script async defer src="https://cdn.boei.help/hello.js"></script>-->
+<!--<script>-->
+<!--    var url = 'https://wati-integration-service.clare.ai/ShopifyWidget/shopifyWidget.js?64660';-->
+<!--    var s = document.createElement('script');-->
+<!--    s.type = 'text/javascript';-->
+<!--    s.async = true;-->
+<!--    s.src = url;-->
+<!--    var options = {-->
+<!--  "enabled":true,-->
+<!--  "chatButtonSetting":{-->
+<!--      "backgroundColor":"#4dc247",-->
+<!--      "ctaText":"Message Us",-->
+<!--      "borderRadius":"25",-->
+<!--      "marginLeft":"0",-->
+<!--      "marginBottom":"50",-->
+<!--      "marginRight":"50",-->
+<!--      "position":"right"-->
+<!--  },-->
+<!--  "brandSetting":{-->
+<!--      "brandName":"Sernik",-->
+<!--      "brandSubTitle":"",-->
+<!--      "brandImg":"https://hrithik7378.pythonanywhere.com/media/logo/logo.png",-->
+<!--      "welcomeText":"Hi there!\nHow can I help you?",-->
+<!--      "messageText":"Hello, I have a question about {{page_link}}",-->
+<!--      "backgroundColor":"#0a5f54",-->
+<!--      "ctaText":"Start Chat",-->
+<!--      "borderRadius":"25",-->
+<!--      "autoShow":false,-->
+<!--      "phoneNumber":"918879963368"-->
+<!--  }-->
+<!--};-->
+<!--    s.onload = function() {-->
+<!--        CreateWhatsappChatWidget(options);-->
+<!--    };-->
+<!--    var x = document.getElementsByTagName('script')[0];-->
+<!--    x.parentNode.insertBefore(s, x);-->
+<!--</script>-->
+
+
+
+
+<script src="/assets/vendors/popper.js/popper.min.js "></script>
+<script src="/assets/vendors/wowjs/wow.min.js "></script>
+<script src="/assets/vendors/bootstrap/dist/js/bootstrap.min.js "></script>
+<script src="/assets/vendors/slick-carousel/slick.min.js "></script>
+<script src="/assets/js/main.js "></script>
+<script src="/assets/js/landing.js "></script>
+<script>
+    new WOW({
+        mobile: false
+    }).init();
+</script>
+
+
+</html>

@@ -1,0 +1,457 @@
+/* Changes made in the Header side */
+
+.header-left {
+    float: right;
+}
+
+.client-logo {
+    width: 100px;
+}
+
+.logo-container {
+    text-align: center!important;
+    width: 100%;
+    margin: 0 0 auto auto;
+}
+
+.main-navigaton {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+/* Changes made in the Service Section Index Page */
+
+.index-link {
+    color: #dc3545!important;
+}
+
+
+/* Components Css Reusable Code */
+
+.default-button {
+    background: #000000!important;
+    border-radius: 0px!important;
+    color: white!important;
+}
+
+.default-button:hover {
+    background: #d31124!important;
+    transition: 500ms;
+}
+
+.Cancel-btn {
+    color: black!important;
+    border-radius: 0px!important;
+}
+
+
+/* Changes made in the footer */
+
+.footer-navigatoin {
+    list-style: none;
+    padding: 0;
+}
+
+.Footer-list {
+    color: white;
+    list-style: none;
+}
+
+.navigation-link {
+    color: white!important;
+}
+
+.navigation-link:hover {
+    transition: 500ms;
+    color: #d31124!important;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.oleez-footer {
+    bottom: 0;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+
+/* Paste this code if footer dosen't work */
+
+.sernik-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+
+/* Blog-grid page */
+
+.sernik-btn {
+    color: white!important;
+    background: black!important;
+    border-radius: 0!important;
+    width: 100%;
+    margin: 0 0 20px 0;
+}
+
+.main-dropdown {
+    color: white!important;
+}
+
+.dropdown-item {
+    background: rgb(255, 255, 255)!important;
+    width: 100%!important;
+    padding: 4px 10px!important;
+}
+
+.dropdown-menu {
+    background-color: rgb(255, 255, 255)!important;
+    width: 100%!important;
+    margin: 5px 0!important;
+    border-radius: 0!important;
+}
+
+.dropdown-item:hover {
+    background: #000000!important;
+    color: white!important;
+}
+
+.post-tag {
+    color: white!important;
+    background: #000000!important;
+    text-decoration: none!important;
+    font-weight: 600;
+}
+
+.post-tag:hover {
+    background: #d31124!important;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.blog-post-date {
+    color: rgb(32, 32, 32)!important;
+}
+
+.blog-post-date:hover {
+    text-decoration: none;
+    color: black!important;
+    text-decoration: none;
+}
+
+.blog-post-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.blog-center {
+    display: flex!important;
+    flex-wrap: wrap!important;
+    justify-content: center!important;
+}
+
+.blog-title {
+    text-align: center!important;
+    margin: 0 auto;
+}
+
+.tag-on-blog {
+    font-size: 13px!important;
+    margin: 5px;
+}
+
+.like-blog {
+    font-size: 14px;
+    color: white!important;
+    background: black!important;
+    border-radius: 0!important;
+    transition: 500ms;
+}
+
+.like-blog i {
+    padding: 0 6px 0 0;
+}
+
+.like-blog:hover {
+    font-size: 14px;
+    color: white!important;
+    background: rgb(196, 7, 7)!important;
+    border-radius: 0!important;
+    border: #dc3545 1px solid!important;
+}
+
+
+/* Comment Dropdown Section */
+
+.comments-details button.btn.dropdown-toggle,
+.comments-details .total-comments {
+    font-size: 18px;
+    font-weight: 500;
+    color: #5e5e5e;
+}
+
+.comments-details {
+    padding: 15px 15px;
+}
+
+.comments .comments .dropdown,
+.comments .dropup {
+    position: relative;
+}
+
+.comments button {
+    background-color: transparent;
+    border: none;
+}
+
+.comments .comment-box {
+    width: 100%;
+    float: left;
+    height: 100%;
+    background-color: #ffffff;
+    padding: 10px 10px 10px;
+    margin-bottom: 15px;
+    border-left: 1px solid #ddd;
+}
+
+.comments .add-comment {
+    background-color: transparent;
+    border: none;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.comments .commenter-pic {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    border-radius: 100%;
+    border: 2px solid #fff;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.comments .add-comment .commenter-name {
+    width: 100%;
+    padding-left: 75px;
+    position: absolute;
+    top: 20px;
+    left: 0px;
+}
+
+.comments .add-comment input {
+    border-top: 0px;
+    border-bottom: 1px solid #ccc;
+    border-left: 0px;
+    border-right: 0px;
+    outline: 0px;
+    box-shadow: none;
+    border-radius: 0;
+    width: 100%;
+    padding: 0;
+    font-weight: normal;
+}
+
+.comments .add-comment input:focus {
+    border-color: #03a9f4;
+    border-width: 2px;
+}
+
+.comments .add-comment button[type=submit] {
+    background-color: #03a9f4;
+    color: #fff;
+    margin-right: 0px;
+}
+
+.comments .add-comment button {
+    background-color: #f5f5f5;
+    margin: 10px 5px;
+    font-size: 14px;
+    text-transform: uppercase;
+    float: right;
+}
+
+.comments .commenter-name .comment-time {
+    font-weight: normal;
+    margin-left: 8px;
+    font-size: 15px;
+}
+
+.comments p.comment-txt {
+    font-size: 15px;
+    border-bottom: 1px solid #ddd;
+    padding: 0px 0px 15px;
+}
+
+.comments .commenter-name {
+    display: inline-block;
+    position: relative;
+    top: -20px;
+    left: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.comments .comment-meta {
+    font-size: 14px;
+    color: #333;
+    padding: 2px 5px 0px;
+    line-height: 20px;
+    float: right;
+}
+
+.comments .reply-box {
+    display: none;
+}
+
+.comments .replied {
+    background-color: #fff;
+    width: 95%;
+    float: right;
+    margin-top: 15px;
+}
+
+
+/*======Responsive CSS=======*/
+
+@media (max-width: 767px) {
+    .comments .commenter-name {
+        font-size: 13px;
+        top: -5px;
+    }
+    .comments .commenter-pic {
+        width: 40px;
+        height: 40px;
+    }
+    .comments .commenter-name a {
+        display: block;
+    }
+    .comments .commenter-name .comment-time {
+        display: block;
+        margin-left: 0px;
+    }
+}
+
+.post-date {
+    line-height: normal!important;
+    text-align: right;
+    width: max-content;
+    float: right;
+}
+
+.Writer-Fetch {
+    color: #d31124!important;
+}
+
+.Writer-Fetch:hover {
+    text-decoration: none;
+    color: black;
+}
+
+
+/* Code for the social media icona that will cone on the right side in base file */
+
+.share-blog {
+    border-radius: 0!important;
+}
+
+.center-search {
+    width: 60%;
+    margin: auto;
+    height: 100%;
+    background: black;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.search-btn-2 {
+    color: black!important;
+    background: #d31124!important;
+    margin: 0;
+}
+
+.new-card {
+    background: black!important;
+}
+
+
+/* Newsletter */
+
+.newsletter-subscribe p {
+    color: #7d8285;
+    line-height: 1.5
+}
+
+.newsletter-subscribe .intro {
+    font-size: 16px;
+    max-width: 700px;
+    margin: 0 auto 25px
+}
+
+.newsletter-subscribe .intro p {
+    margin-bottom: 35px
+}
+
+.newsletter-subscribe form {
+    justify-content: center
+}
+
+.newsletter-subscribe form .form-control {
+    background: #eff1f4;
+    border: none;
+    border-radius: 3px;
+    box-shadow: none;
+    outline: none;
+    color: inherit;
+    text-indent: 9px;
+    height: 45px;
+    margin-right: 10px;
+    min-width: 250px
+}
+
+.newsletter-subscribe form .btn {
+    padding: 16px 32px;
+    border: none;
+    background: none;
+    box-shadow: none;
+    text-shadow: none;
+    opacity: 0.9;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 0.4px;
+    line-height: 1;
+    border-radius: 0!important;
+}
+
+.newsletter-subscribe form .btn:hover {
+    opacity: 1;
+    background: black!important;
+    color: white!important;
+}
+
+.newsletter-subscribe form .btn:active {
+    transform: translateY(1px)
+}
+
+.newsletter-subscribe form .btn-primary {
+    background-color: #d31124 !important;
+    color: #fff;
+    outline: none !important
+}
+
+.newsletter {
+    color: #d31124 !important
+}
+
+
+/* Chanege made in main element */

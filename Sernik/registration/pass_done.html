@@ -1,0 +1,70 @@
+{% extends 'base.html'%}
+{% block title%} Sernik || Login {% endblock title%}
+
+
+        <!-- END section -->
+{% block content%}
+    </div>
+    <!-- .site-wrap -->
+    <div class="site-section">
+        <div class="container">
+            
+          <div class="row">
+            
+            <div class="col-lg-8  wow fadeInRight single-content">
+                <h1 class="oleez-page-title wow fadeInUp  pr-2" id="login-title">Your Password Has been set. You may go ahead and log in now </h1>
+                <div class="form-group">
+                    <a  href="{% url 'login' %}" style="font-size: large;">Login</a>{{form}}
+                </div>
+            
+            </div>
+        </div> 
+    </div>      
+    
+    
+    <footer class="page-footer font-small special-color-dark pt-4" style="bottom:0!important;">
+        <div class="container">
+            <div class="row footer-content-2">
+                <div class="col-md-8 align-items-center">
+                    <div class="footer-widget-text">
+    
+                        <ul class="footer-navigatoin">
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'home' %}">Home</a>
+                            </li>
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'about'%}">About</a></li>
+                            <li class="Foooter-list"> <a class="widget-content navigation-link" href="{% url 'blogs' %}">Blogs</a></li>
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'f&q'%}">FAQ</a>
+                            </li>
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'contact'%}">Contact</a>
+                            </li>
+                        </ul>
+                        <ul class="footer-navigatoin">
+                            {% if user.is_authenticated %}
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'logout'%}">Logout</a>
+                            </li>
+                            {% else %}
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'register'%}">Register</a>
+                            </li>
+                            <li class="Footer-list"> <a class="widget-content navigation-link" href="{% url 'login'%}">Login</a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+    
+    
+                <div class="col-md-4 search-footer-center">
+                    <form class="form-inline" action="{% url 'search' %}">
+                        <input class="form-control form-control-sm mr-3 w-75 footer-search" type="text" id="search" name="search" placeholder="Search" aria-label="Search">
+                        <button class="btn footer-icon" type="submit"> <i class="bi bi-search footer-icon " aria-hidden="true "></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-text ">
+                <p class="mb-md-0 ">© Copyright And Privacy Policy Reserved by <a class="footer-link-sernik-2" style="color:white!important;" href="">Sundayink</a> <span id="monthYear" class="">March 2022</span>, Website Designed by <a href="https://www.himanicc.com " target="_blank "
+                        rel="noopener noreferrer " class="footer-link-sernik " style="color: white; font-weight:600; ">www.himanicc.com</a>
+                </p>
+            </div>
+        </div>    
+    </footer>
+    {% endblock content%}
